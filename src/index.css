@@ -5,8 +5,8 @@
 @tailwind utilities;
 
 :root {
-  --bg-main: #ffffff;
-  --bg-grid: #f5f5f5;
+  --bg-main: #f6f6f6;
+  --bg-grid: #ececec;
   --bg-card: #ffffff;
   --bg-navbar: #ffffff;
 
@@ -14,6 +14,10 @@
   --text-secondary: #475569;
   --text-muted: #94a3b8;
 
+  --accent-green: #19f2a6;
+  --accent-yellow: #ffe95e;
+  --accent-pink: #ffb8f7;
+  --accent-blue: #9fd9ff;
   --border-color: #000000;
   --shadow-color: #000000;
 
@@ -43,6 +47,9 @@ html.dark {
 body {
   margin: 0;
   background: var(--bg-main);
+  background-image:
+    radial-gradient(circle at top left, color-mix(in srgb, var(--accent-yellow) 22%, transparent) 0, transparent 28%),
+    radial-gradient(circle at top right, color-mix(in srgb, var(--accent-pink) 16%, transparent) 0, transparent 24%);
   min-height: 100vh;
   color: var(--text-primary);
   overflow-x: hidden;
@@ -59,33 +66,50 @@ a {
 .neo-card {
   border: 3px solid var(--border-color);
   border-radius: 16px;
-  box-shadow: 6px 6px 0 var(--shadow-color);
+  box-shadow: 8px 8px 0 var(--shadow-color);
   background: var(--bg-card);
+  position: relative;
+  overflow: hidden;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .neo-card-muted {
   border: 3px solid var(--border-color);
   border-radius: 16px;
-  box-shadow: 4px 4px 0 var(--shadow-color);
+  box-shadow: 6px 6px 0 var(--shadow-color);
   background: var(--bg-card);
+  position: relative;
+  overflow: hidden;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .neo-btn {
   border: 3px solid var(--border-color);
   border-radius: 14px;
-  box-shadow: 4px 4px 0 var(--shadow-color);
+  box-shadow: 5px 5px 0 var(--shadow-color);
   color: #000000;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition: transform 180ms ease, box-shadow 180ms ease, rotate 180ms ease;
 }
 
 .neo-btn:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 6px 6px 0 var(--shadow-color);
+  transform: translate(-4px, -4px) scale(1.01);
+  box-shadow: 7px 7px 0 var(--shadow-color);
 }
 
 .neo-btn:active {
   transform: translate(0, 0);
   box-shadow: 3px 3px 0 var(--shadow-color);
+}
+
+.neo-btn svg,
+.card-hover svg {
+  transition: transform 180ms ease;
+}
+
+.neo-btn:hover svg {
+  transform: rotate(-8deg) scale(1.04);
 }
 
 .grid-brutal {
@@ -131,15 +155,12 @@ a {
   border-radius: 12px;
   background: var(--bg-card);
   color: var(--text-primary);
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .neo-input::placeholder {
   color: var(--text-muted);
-}
-
-.card-hover:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 8px 8px 0 var(--shadow-color);
 }
 
 .theme-dot {
@@ -163,7 +184,130 @@ a {
 }
 
 .card-hover {
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.card-hover:hover {
+  transform: translate(-6px, -6px) rotate(var(--hover-tilt, -1deg));
+  box-shadow: 10px 10px 0 var(--shadow-color);
+}
+
+.list-safe {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.list-safe li,
+.list-safe li span,
+.list-safe p {
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.floating-label {
+  position: absolute;
+  top: -18px;
+  left: 18px;
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 3px solid var(--border-color);
+  background: var(--accent-yellow);
+  color: #0b0b0b;
+  box-shadow: 6px 6px 0 var(--shadow-color);
+  border-radius: 18px 8px 18px 8px;
+}
+
+.section-node {
+  position: relative;
+}
+
+.section-node::before {
+  content: '';
+  position: absolute;
+  inset: auto auto -10px -10px;
+  width: 38px;
+  height: 38px;
+  border: 3px solid var(--border-color);
+  background: var(--accent-blue);
+  border-radius: 14px 4px 14px 4px;
+  z-index: 0;
+}
+
+.section-node::after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  right: -20px;
+  width: 60px;
+  height: 3px;
+  background: var(--border-color);
+  opacity: 0.3;
+}
+
+.asym-card-a {
+  border-radius: 28px 8px 24px 8px;
+}
+
+.asym-card-b {
+  border-radius: 8px 26px 8px 24px;
+}
+
+.asym-card-c {
+  border-radius: 24px 10px 32px 10px;
+}
+
+.asym-card-d {
+  border-radius: 10px 10px 24px 10px;
+}
+
+.stagger-up {
+  transform: translateY(-10px);
+}
+
+.stagger-down {
+  transform: translateY(12px);
+}
+
+.accent-strip {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 16px;
+  border-right: 3px solid var(--border-color);
+}
+
+.module-block {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  box-shadow: 5px 5px 0 var(--shadow-color);
+}
+
+.system-connector {
+  position: absolute;
+  pointer-events: none;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .system-connector {
+    display: block;
+  }
+}
+
+@keyframes gentle-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.bounce-soft {
+  animation: gentle-bounce 2.8s ease-in-out infinite;
 }
 
 .visually-hidden {
@@ -176,4 +320,13 @@ a {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }

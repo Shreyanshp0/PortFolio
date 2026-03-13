@@ -13,19 +13,21 @@ export function Certifications() {
           accent="pink"
         />
 
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3">
           {certifications.map((cert, idx) => (
             <motion.div
               key={`${cert.name}-${idx}`}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20, rotate: idx % 2 === 0 ? -2 : 2 }}
+              whileInView={{ opacity: 1, y: 0, rotate: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.4 }}
-              className="neo-card p-4 bg-theme-card h-full card-hover"
+              className={`neo-card p-6 h-full card-hover list-safe ${idx % 3 === 0 ? 'asym-card-d md:-translate-y-2' : idx % 3 === 1 ? 'asym-card-b md:translate-y-4' : 'asym-card-a md:-translate-y-1'}`}
             >
-              <p className="text-sm text-theme-muted">{cert.date}</p>
-              <h3 className="text-lg font-bold">{cert.name}</h3>
-              <p className="text-sm font-semibold text-theme-secondary">{cert.org}</p>
+              <div className={`mb-4 inline-flex rounded-[12px] border-[3px] border-black px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-ink ${idx % 2 === 0 ? 'bg-pink' : 'bg-blue'}`}>
+                {cert.date}
+              </div>
+              <h3 className="text-lg font-black">{cert.name}</h3>
+              <p className="mt-2 text-sm font-semibold text-theme-secondary">{cert.org}</p>
             </motion.div>
           ))}
         </div>

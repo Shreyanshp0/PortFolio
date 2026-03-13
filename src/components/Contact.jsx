@@ -32,7 +32,7 @@ export function Contact() {
       <div className="container-brutal space-y-10">
         <SectionHeader
           kicker="Contact"
-          title="Let’s build together"
+          title="Let's build together"
           description="Form posts to your Express + Mongo backend. Hook this into the provided server route."
           accent="primary"
         />
@@ -40,12 +40,15 @@ export function Contact() {
         <div className="grid gap-6 md:grid-cols-2">
           <motion.form
             onSubmit={handleSubmit}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 24, rotate: -1.5 }}
+            whileInView={{ opacity: 1, y: 0, rotate: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.45 }}
-            className="neo-card p-6 bg-theme-card space-y-4 card-hover"
+            className="neo-card asym-card-a p-6 space-y-4 card-hover list-safe"
           >
+            <div className="inline-flex rounded-[12px] border-[3px] border-black px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-ink bg-primary">
+              Message Node
+            </div>
             <div>
               <label className="block text-sm font-semibold mb-2" htmlFor="name">
                 Name
@@ -56,7 +59,7 @@ export function Contact() {
                 required
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="neo-input w-full px-3 py-2"
+                className="neo-input w-full px-3 py-3"
                 placeholder="Your name"
               />
             </div>
@@ -71,7 +74,7 @@ export function Contact() {
                 required
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="neo-input w-full px-3 py-2"
+                className="neo-input w-full px-3 py-3"
                 placeholder="you@example.com"
               />
             </div>
@@ -86,7 +89,7 @@ export function Contact() {
                 rows="4"
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="neo-input w-full px-3 py-2"
+                className="neo-input w-full px-3 py-3"
                 placeholder="Tell me about the role or collaboration idea"
               />
             </div>
@@ -98,13 +101,15 @@ export function Contact() {
           </motion.form>
 
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 24, rotate: 1.5 }}
+            whileInView={{ opacity: 1, y: 0, rotate: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.45 }}
-            className="neo-card p-6 bg-theme-card space-y-4 card-hover"
+            className="neo-card asym-card-b p-6 space-y-5 card-hover list-safe"
           >
-            <p className="text-lg font-semibold">Direct links</p>
+            <div className="inline-flex rounded-[12px] border-[3px] border-black px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-ink bg-yellow">
+              Direct Links
+            </div>
             <div className="flex flex-col gap-3">
               <a className="neo-btn bg-yellow text-ink px-4 py-3 flex items-center gap-2" href="mailto:todo@email.com">
                 <Mail size={18} /> TODO: Add email
@@ -122,12 +127,13 @@ export function Contact() {
                 <Linkedin size={18} /> LinkedIn
               </a>
             </div>
-            <p className="text-sm text-theme-secondary">
-              Backend lives at <span className="font-semibold">/api/contact</span>. Configure your{' '}
-              <span className="font-semibold">MONGO_URI</span>
-              in <span className="font-semibold">server/.env</span>, then run{' '}
-              <span className="font-semibold">npm run dev:full</span>.
-            </p>
+            <div className="neo-card-muted asym-card-d p-4 bg-pink text-ink">
+              <p className="text-sm font-semibold">
+                Backend lives at <span className="font-black">/api/contact</span>. Configure your{' '}
+                <span className="font-black">MONGO_URI</span> in <span className="font-black">server/.env</span>, then run{' '}
+                <span className="font-black">npm run dev:full</span>.
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>

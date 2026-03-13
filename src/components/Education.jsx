@@ -13,26 +13,36 @@ export function Education() {
           accent="blue"
         />
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          {education.map((edu) => (
+        <div className="grid gap-5 sm:grid-cols-2">
+          {education.map((edu, index) => (
             <motion.div
               key={edu.school}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20, rotate: index % 2 === 0 ? -1.5 : 1.5 }}
+              whileInView={{ opacity: 1, y: 0, rotate: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.45 }}
-              className="neo-card p-5 bg-theme-card h-full card-hover"
+              className={`neo-card p-6 h-full card-hover list-safe ${index % 2 === 0 ? 'asym-card-c sm:-translate-y-2' : 'asym-card-b sm:translate-y-5'}`}
             >
-              <h3 className="text-xl font-bold">{edu.degree}</h3>
-              <p className="text-sm font-semibold">{edu.school}</p>
-              <p className="text-xs text-theme-muted">{edu.timeline}</p>
-              <p className="text-sm mt-2 text-theme-secondary">CGPA: {edu.cgpa}</p>
-              <div className="flex flex-wrap gap-2 mt-3">
-                {edu.coursework.map((course) => (
-                  <span key={course} className="text-xs font-semibold px-3 py-1 bg-yellow text-ink border-2 border-black rounded-full">
-                    {course}
-                  </span>
-                ))}
+              <div className={`absolute left-0 top-0 h-5 w-24 border-b-[3px] border-r-[3px] border-black dark:border-white ${index % 2 === 0 ? 'bg-blue' : 'bg-yellow'}`} />
+              <div className="pt-4">
+                <h3 className="text-xl font-black">{edu.degree}</h3>
+                <p className="mt-1 text-sm font-semibold">{edu.school}</p>
+                <p className="text-xs text-theme-muted">{edu.timeline}</p>
+                <div className="mt-4 inline-flex rounded-[12px] border-[3px] border-black px-3 py-1 text-sm font-black text-ink bg-primary">
+                  CGPA: {edu.cgpa}
+                </div>
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {edu.coursework.map((course, courseIndex) => (
+                    <span
+                      key={course}
+                      className={`max-w-full text-xs font-semibold px-3 py-1 text-ink border-2 border-black rounded-full break-words ${
+                        courseIndex % 3 === 0 ? 'bg-yellow' : courseIndex % 3 === 1 ? 'bg-blue' : 'bg-pink'
+                      }`}
+                    >
+                      {course}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

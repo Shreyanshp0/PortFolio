@@ -5,10 +5,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#0DFFA8',
-        yellow: '#FFED4F',
-        pink: '#FFD9FD',
-        blue: '#D9EFFF',
+        primary: '#19F2A6',
+        yellow: '#FFE95E',
+        pink: '#FFB8F7',
+        blue: '#9FD9FF',
         ink: '#0B0B0B',
         dark: {
           background: '#0f172a',
