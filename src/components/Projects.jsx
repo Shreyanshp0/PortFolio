@@ -88,15 +88,17 @@ export function Projects() {
                   </div>
                 </div>
                 <div className="flex flex-wrap items-center gap-3 text-sm font-semibold">
-                  <a
-                    className="neo-btn bg-primary px-3 py-2 flex items-center gap-2"
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <Github size={16} /> GitHub
-                  </a>
+                  {project.githubLink ? (
+                    <a
+                      className="neo-btn bg-primary px-3 py-2 flex items-center gap-2"
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Github size={16} /> GitHub
+                    </a>
+                  ) : null}
                   {project.liveDemo ? (
                     <a
                       className="neo-btn bg-theme-card text-theme-primary px-3 py-2 flex items-center gap-2"

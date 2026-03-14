@@ -168,7 +168,7 @@ a {
 }
 
 .section-padding {
-  padding: 120px 0 100px;
+  padding: 32px 0 52px;
 }
 
 .container-brutal {
@@ -180,7 +180,11 @@ a {
 }
 
 .scroll-offset {
-  scroll-margin-top: 120px;
+  scroll-margin-top: 104px;
+}
+
+#hero.section-padding {
+  padding-top: 20px;
 }
 
 .card-hover {
@@ -329,4 +333,14 @@ a {
 
 .scrollbar-none::-webkit-scrollbar {
   display: none;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 44px 0 60px;
+  }
+
+  #hero.section-padding {
+    padding-top: 24px;
+  }
 }

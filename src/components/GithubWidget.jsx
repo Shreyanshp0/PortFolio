@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Github, RefreshCcw, Star } from 'lucide-react'
 
-const username = 'your-handle' // TODO: Replace with your GitHub username
+const username = 'Shreyanshp0'
 
 export function GithubWidget() {
   const [repos, setRepos] = useState([])

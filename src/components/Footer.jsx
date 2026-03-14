@@ -7,7 +7,7 @@ export function Footer() {
           <a href="#hero" className="underline underline-offset-4">
             Back to top
           </a>
-          <a href="https://github.com/your-handle" target="_blank" rel="noreferrer" className="underline underline-offset-4">
+          <a href="https://github.com/Shreyanshp0" target="_blank" rel="noreferrer" className="underline underline-offset-4">
             GitHub
           </a>
           <a href="mailto:todo@email.com" className="underline underline-offset-4">

@@ -116,13 +116,13 @@ export function Contact() {
               </a>
               <a
                 className="neo-btn bg-theme-card text-theme-primary px-4 py-3 flex items-center gap-2"
-                href="https://github.com/your-handle"
+                href="https://github.com/Shreyanshp0"
               >
                 <Github size={18} /> GitHub
               </a>
               <a
                 className="neo-btn bg-blue text-ink px-4 py-3 flex items-center gap-2"
-                href="https://linkedin.com/in/your-handle"
+                href="https://linkedin.com/in/Shreyanshp0"
               >
                 <Linkedin size={18} /> LinkedIn
               </a>

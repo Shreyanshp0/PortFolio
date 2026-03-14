@@ -57,6 +57,16 @@ const sectionMeta = {
     headerPosition: 'right-8 -top-6',
     wrapper: 'md:mt-14 xl:-ml-4 xl:translate-y-6 z-20',
   },
+  impact: {
+    title: 'Impact / Results',
+    icon: Star,
+    accent: 'bg-yellow',
+    shell: 'bg-theme-card',
+    bodyAccent: 'bg-theme-card',
+    radius: '20px 8px 28px 8px',
+    headerPosition: 'right-10 -top-6',
+    wrapper: 'md:col-span-2',
+  },
   features: {
     title: 'Key Features',
     icon: Star,
@@ -308,6 +318,7 @@ export function ProjectDetail() {
   }
 
   const sectionOrder = ['problem', 'solution', 'architecture', 'challenges', 'features']
+  const orderedSections = project.detailedDescription?.impact ? [...sectionOrder, 'impact'] : sectionOrder
 
   return (
     <div className="bg-theme-main text-theme-primary">
@@ -413,10 +424,10 @@ export function ProjectDetail() {
             </DiagramConnector>
 
             <div className="relative z-10 grid gap-7 md:grid-cols-2">
-              {sectionOrder.map((sectionKey) => (
+              {orderedSections.map((sectionKey) => (
                 <div
                   key={sectionKey}
-                  className={sectionKey === 'features' ? 'md:col-span-2' : ''}
+                  className={sectionKey === 'features' || sectionKey === 'impact' ? 'md:col-span-2' : ''}
                 >
                   <CaseStudyCard sectionKey={sectionKey} content={project.detailedDescription[sectionKey]} />
                 </div>
