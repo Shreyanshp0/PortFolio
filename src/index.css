@@ -103,6 +103,13 @@ a {
   box-shadow: 3px 3px 0 var(--shadow-color);
 }
 
+.neo-btn:focus-visible,
+.neo-input:focus-visible,
+.focus-brutal:focus-visible {
+  outline: 3px solid var(--border-color);
+  outline-offset: 4px;
+}
+
 .neo-btn svg,
 .card-hover svg {
   transition: transform 180ms ease;
@@ -168,15 +175,15 @@ a {
 }
 
 .section-padding {
-  padding: 32px 0 52px;
+  padding: 28px 0 44px;
 }
 
 .container-brutal {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .scroll-offset {
@@ -184,7 +191,7 @@ a {
 }
 
 #hero.section-padding {
-  padding-top: 20px;
+  padding-top: 18px;
 }
 
 .card-hover {
@@ -337,10 +344,30 @@ a {
 
 @media (min-width: 768px) {
   .section-padding {
-    padding: 44px 0 60px;
+    padding: 40px 0 56px;
   }
 
   #hero.section-padding {
-    padding-top: 24px;
+    padding-top: 20px;
+  }
+
+  .container-brutal {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, Moon, Sun, X } from 'lucide-react'
+import { mechanicalButton, sharpEase } from '../lib/motion'
 
 const navItems = [
   'hero',
@@ -15,7 +17,10 @@ const navItems = [
   'contact',
 ]
 
+const navAccentColors = ['#19F2A6', '#FFE95E', '#9FD9FF', '#FFB8F7']
+
 export function Navbar({ onToggleTheme, theme }) {
+  void motion
   const [open, setOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
   const observer = useRef(null)
@@ -45,50 +50,71 @@ export function Navbar({ onToggleTheme, theme }) {
 
   return (
     <header className="sticky top-0 z-50 bg-theme-navbar/95 backdrop-blur border-b-4 border-black/5 dark:border-white/10 text-theme-primary">
-      <div className="container-brutal py-3">
-        <div className="neo-card asym-card-c bg-theme-navbar px-4 py-3">
-          <div className="flex items-center justify-between gap-3">
-            <div className="flex shrink-0 items-center gap-3">
+      <div className="container-brutal py-4">
+        <div className="neo-card asym-card-c bg-theme-navbar px-6 py-4">
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex shrink-0 items-center gap-4">
               <div className="shrink-0 leading-tight">
                 <p className="text-sm font-black">Shreyansh Pandey</p>
                 <p className="text-xs text-theme-secondary">Full Stack / MERN</p>
               </div>
             </div>
 
-            <nav className="hidden min-w-0 flex-1 items-center justify-center gap-1 px-1 whitespace-nowrap text-sm font-semibold lg:flex xl:gap-1.5">
+            <nav className="hidden min-w-0 flex-1 items-center justify-center gap-2 px-2 whitespace-nowrap text-sm font-semibold lg:flex xl:gap-2">
               {navItems.map((item, index) => {
                 const isActive = activeSection === item
-                const accentClass = index % 4 === 0 ? 'bg-primary' : index % 4 === 1 ? 'bg-yellow' : index % 4 === 2 ? 'bg-blue' : 'bg-pink'
+                const accentColor = navAccentColors[index % navAccentColors.length]
                 return (
-                  <a
+                  <motion.a
                     key={item}
                     href={`#${item}`}
-                    className={`shrink-0 whitespace-nowrap px-1 py-2 rounded-[10px] transition-all duration-150 hover:-translate-y-1 border-[3px] border-transparent ${
-                      isActive ? `${accentClass} text-ink border-black shadow-brutal` : 'hover:bg-blue/60 hover:border-black/20'
+                    className={`relative shrink-0 whitespace-nowrap px-1 py-2 rounded-[10px] border-[3px] border-transparent ${
+                      isActive ? `text-ink border-black` : 'hover:bg-blue/60 hover:border-black/20'
                     }`}
+                    whileHover={{ y: -2, transition: { duration: 0.15, ease: sharpEase } }}
                   >
+                    <AnimatePresence>
+                      {isActive ? (
+                        <motion.span
+                          layoutId="nav-active-pill"
+                          className="absolute inset-0 rounded-[10px]"
+                          style={{ backgroundColor: accentColor }}
+                          transition={{
+                            layout: { duration: 0.22, ease: sharpEase },
+                            backgroundColor: { duration: 0.18, ease: 'linear' },
+                          }}
+                        />
+                      ) : null}
+                    </AnimatePresence>
+                    <span className="relative z-10">
                     {item.charAt(0).toUpperCase() + item.slice(1)}
-                  </a>
+                    </span>
+                  </motion.a>
                 )
               })}
             </nav>
 
-            <div className="flex shrink-0 items-center justify-end gap-3">
-              <button
+            <div className="flex shrink-0 items-center justify-end gap-4">
+              <motion.button
                 aria-label="Toggle theme"
+                aria-pressed={theme === 'dark'}
                 onClick={onToggleTheme}
                 className="neo-btn px-3 py-2 bg-yellow text-ink flex items-center gap-2"
+                {...mechanicalButton}
               >
                 {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
                 <span className="hidden sm:inline text-sm">{theme === 'light' ? 'Dark' : 'Light'}</span>
-              </button>
-              <button
+              </motion.button>
+              <motion.button
                 className="lg:hidden neo-btn px-3 py-2 bg-primary"
                 onClick={() => setOpen((prev) => !prev)}
                 aria-label="Toggle navigation"
+                aria-expanded={open}
+                aria-controls="mobile-navigation"
+                {...mechanicalButton}
               >
                 {open ? <X size={18} /> : <Menu size={18} />}
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>
@@ -96,18 +122,20 @@ export function Navbar({ onToggleTheme, theme }) {
 
       {open ? (
         <div className="lg:hidden container-brutal mt-2">
-          <div className="neo-card asym-card-b bg-theme-navbar p-4 flex flex-col gap-2 text-theme-primary">
+          <div id="mobile-navigation" className="neo-card asym-card-b bg-theme-navbar p-4 flex flex-col gap-2 text-theme-primary">
             {navItems.map((item, index) => (
-              <a
+              <motion.a
                 key={item}
                 href={`#${item}`}
                 className={`px-3 py-2 rounded-[10px] transition-colors ${
                   index % 4 === 0 ? 'hover:bg-primary hover:text-ink' : index % 4 === 1 ? 'hover:bg-yellow hover:text-ink' : index % 4 === 2 ? 'hover:bg-blue hover:text-ink' : 'hover:bg-pink hover:text-ink'
                 }`}
                 onClick={() => setOpen(false)}
+                aria-current={activeSection === item ? 'location' : undefined}
+                whileHover={{ x: -2, y: -2, transition: { duration: 0.15, ease: sharpEase } }}
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
-              </a>
+              </motion.a>
             ))}
           </div>
         </div>

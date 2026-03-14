@@ -15,6 +15,8 @@ import {
   X,
 } from 'lucide-react'
 import { getProjectById } from '../data/projects'
+import { cardLift, mechanicalButton, sectionReveal, staggerGrid, staggerItem, sharpEase } from '../lib/motion'
+import { TagBadge } from '../components/ui/TagBadge'
 
 const sectionMeta = {
   problem: {
@@ -121,6 +123,7 @@ function ArchitectureList({ groups }) {
 }
 
 function FloatingHeader({ title, Icon, accent, positionClass }) {
+  void Icon
   return (
     <div className={`absolute ${positionClass} z-30`}>
       <div
@@ -145,18 +148,17 @@ function CaseStudyCard({ sectionKey, content }) {
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 28 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.38 }}
-      className={`relative ${shell} px-5 pb-5 pt-10 md:px-6 md:pb-6 md:pt-12`}
+      {...sectionReveal()}
+      className={`relative ${shell} px-5 pb-5 pt-9 md:px-6 md:pb-6 md:pt-10`}
       style={{ border: '3px solid var(--border-color)', borderRadius: radius, boxShadow: '8px 8px 0 var(--shadow-color)' }}
+      {...cardLift}
     >
       <FloatingHeader title={title} Icon={Icon} accent={accent} positionClass={headerPosition} />
 
       <div className="absolute left-5 right-5 top-5 h-4 border-t-[3px] border-dashed border-black/25 dark:border-white/20" />
 
       <div
-        className={`relative mt-4 border-[3px] border-black dark:border-white p-4 md:p-5 ${bodyAccent}`}
+        className={`relative mt-3 border-[3px] border-black dark:border-white p-4 ${bodyAccent}`}
         style={{ borderRadius: sectionKey === 'solution' ? '8px 24px 8px 24px' : '18px 8px 18px 8px', boxShadow: '4px 4px 0 var(--shadow-color)' }}
       >
         <div className="mb-4 flex items-center justify-between gap-3">
@@ -184,19 +186,17 @@ function DiagramConnector({ className, children }) {
 function MediaPanel({ project, onSelectImage }) {
   return (
     <motion.aside
-      initial={{ opacity: 0, y: 24, rotate: -1.4 }}
-      animate={{ opacity: 1, y: 0, rotate: -1.4 }}
-      transition={{ duration: 0.45, delay: 0.08 }}
-      className="relative mt-6"
+      {...sectionReveal(0.08)}
+      className="relative mt-5"
     >
       <div
-        className="relative border-[4px] border-black dark:border-white bg-theme-card p-5 md:p-6"
+        className="relative border-[4px] border-black dark:border-white bg-theme-card p-4 md:p-5"
         style={{ borderRadius: '26px 10px 26px 10px', boxShadow: '10px 10px 0 var(--shadow-color)', transform: 'rotate(-1.4deg)' }}
       >
         <div className="absolute -left-4 top-12 h-8 w-8 rounded-full border-[3px] border-black dark:border-white bg-pink" />
         <div className="absolute -right-4 top-24 h-4 w-16 border-y-[3px] border-black dark:border-white bg-yellow" />
 
-        <div className="relative space-y-6" style={{ transform: 'rotate(1.4deg)' }}>
+        <div className="relative space-y-5" style={{ transform: 'rotate(1.4deg)' }}>
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.2em] text-theme-muted">Media Panel</p>
@@ -211,9 +211,9 @@ function MediaPanel({ project, onSelectImage }) {
           </div>
 
           {project.images?.length ? (
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3">
               {project.images.map((img, index) => (
-                <button
+                <motion.button
                   key={img}
                   type="button"
                   onClick={() => onSelectImage(img)}
@@ -221,6 +221,7 @@ function MediaPanel({ project, onSelectImage }) {
                     index % 2 === 0 ? 'rotate-[-2deg]' : 'rotate-[2deg]'
                   } transition-transform hover:-translate-y-1`}
                   style={{ borderRadius: index % 2 === 0 ? '16px 6px 16px 6px' : '6px 16px 6px 16px', boxShadow: '6px 6px 0 var(--shadow-color)' }}
+                  {...cardLift}
                 >
                   <div className="aspect-[4/3] overflow-hidden border-[3px] border-black dark:border-white bg-theme-main">
                     <img
@@ -230,7 +231,7 @@ function MediaPanel({ project, onSelectImage }) {
                     />
                   </div>
                   <p className="mt-3 text-xs font-black uppercase tracking-[0.16em] text-theme-muted">Pinned tile {index + 1}</p>
-                </button>
+                </motion.button>
               ))}
             </div>
           ) : (
@@ -243,12 +244,13 @@ function MediaPanel({ project, onSelectImage }) {
           )}
 
           {project.video ? (
-            <a
+            <motion.a
               href={project.video}
               target="_blank"
               rel="noreferrer"
               className="block border-[3px] border-black dark:border-white bg-yellow p-4"
               style={{ borderRadius: '18px 8px 18px 8px', boxShadow: '6px 6px 0 var(--shadow-color)' }}
+              {...mechanicalButton}
             >
               <div className="flex items-center justify-between gap-4">
                 <div>
@@ -259,7 +261,7 @@ function MediaPanel({ project, onSelectImage }) {
                   <ExternalLink size={18} />
                 </div>
               </div>
-            </a>
+            </motion.a>
           ) : null}
         </div>
       </div>
@@ -299,6 +301,7 @@ function ImageModal({ image, title, onClose }) {
 }
 
 export function ProjectDetail() {
+  void motion
   const { projectId } = useParams()
   const navigate = useNavigate()
   const project = useMemo(() => getProjectById(projectId), [projectId])
@@ -307,9 +310,9 @@ export function ProjectDetail() {
   if (!project) {
     return (
       <section className="section-padding">
-        <div className="container-brutal space-y-6">
+        <div className="container-brutal space-y-8">
           <p className="text-2xl font-bold">Project not found.</p>
-          <button className="neo-btn bg-primary px-4 py-3" onClick={() => navigate('/')}>
+          <button className="neo-btn bg-primary px-4 py-3 focus-visible:ring-4 focus-visible:ring-offset-2" onClick={() => navigate('/')}>
             Back to projects
           </button>
         </div>
@@ -324,7 +327,7 @@ export function ProjectDetail() {
     <div className="bg-theme-main text-theme-primary">
       <section className="section-padding scroll-offset">
         <div className="container-brutal space-y-8">
-          <button className="neo-btn bg-yellow px-4 py-3 flex items-center gap-2" onClick={() => navigate(-1)}>
+          <button className="neo-btn bg-yellow px-4 py-3 flex items-center gap-2 focus-brutal" onClick={() => navigate(-1)}>
             <ArrowLeft size={16} /> Back to projects
           </button>
 
@@ -336,24 +339,19 @@ export function ProjectDetail() {
             <div className="absolute right-8 top-6 h-5 w-28 border-y-[3px] border-black dark:border-white bg-yellow" />
             <div className="absolute bottom-8 right-12 h-12 w-12 rounded-[14px] border-[3px] border-black dark:border-white bg-pink" />
 
-            <div className="relative flex flex-col gap-5">
-              <div className="flex flex-wrap items-center gap-3">
-                <p className="text-sm font-semibold px-3 py-1 bg-primary border-2 border-black rounded-full text-ink">
-                  {project.category}
-                </p>
+            <div className="relative flex flex-col gap-6">
+              <div className="flex flex-wrap items-center gap-4">
+                <TagBadge accent="primary">{project.category}</TagBadge>
                 <div className="flex flex-wrap gap-2">
-                  {project.techStack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-xs font-semibold px-3 py-1 bg-blue border-2 border-black rounded-full text-ink"
-                    >
+                  {project.techStack.map((tech, techIndex) => (
+                    <TagBadge key={tech} accent="blue" delay={techIndex * 0.03} animate>
                       {tech}
-                    </span>
+                    </TagBadge>
                   ))}
                 </div>
               </div>
 
-              <div className="grid gap-6 lg:grid-cols-[1.1fr,0.9fr] lg:items-end">
+              <div className="grid gap-8 lg:grid-cols-[1.1fr,0.9fr] lg:items-end">
                 <div className="space-y-3">
                   <p className="text-xs font-black uppercase tracking-[0.26em] text-theme-muted">Case Study Node</p>
                   <h1 className="text-4xl md:text-5xl font-black leading-none tracking-tight">{project.title}</h1>
@@ -361,7 +359,7 @@ export function ProjectDetail() {
                 </div>
 
                 <div
-                  className="border-[3px] border-black dark:border-white bg-yellow p-5"
+                  className="border-[3px] border-black dark:border-white bg-yellow p-6"
                   style={{ borderRadius: '8px 24px 8px 24px', boxShadow: '7px 7px 0 var(--shadow-color)' }}
                 >
                   <p className="text-xs font-black uppercase tracking-[0.2em] text-ink/70">Project Snapshot</p>
@@ -369,36 +367,48 @@ export function ProjectDetail() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-4">
                 {project.githubLink ? (
-                  <a
+                  <motion.a
                     className="neo-btn bg-primary px-4 py-3 flex items-center gap-2"
                     href={project.githubLink}
                     target="_blank"
                     rel="noreferrer"
+                    aria-label={`Open ${project.title} GitHub repository`}
+                    {...mechanicalButton}
                   >
-                    <Github size={18} /> GitHub
-                  </a>
+                    <motion.span whileHover={{ rotate: -10 }} transition={{ duration: 0.15, ease: sharpEase }}>
+                      <Github size={18} />
+                    </motion.span>
+                    GitHub
+                  </motion.a>
                 ) : null}
                 {project.liveDemo ? (
-                  <a
+                  <motion.a
                     className="neo-btn bg-theme-card text-theme-primary px-4 py-3 flex items-center gap-2"
                     href={project.liveDemo}
                     target="_blank"
                     rel="noreferrer"
+                    aria-label={`Open ${project.title} live demo`}
+                    {...mechanicalButton}
                   >
-                    Live demo <ExternalLink size={18} />
-                  </a>
+                    Live demo
+                    <motion.span whileHover={{ x: 4 }} transition={{ duration: 0.15, ease: sharpEase }}>
+                      <ExternalLink size={18} />
+                    </motion.span>
+                  </motion.a>
                 ) : null}
                 {project.video ? (
-                  <a
+                  <motion.a
                     className="neo-btn bg-pink px-4 py-3 flex items-center gap-2"
                     href={project.video}
                     target="_blank"
                     rel="noreferrer"
+                    aria-label={`Watch ${project.title} demo`}
+                    {...mechanicalButton}
                   >
                     <Play size={18} /> Watch demo
-                  </a>
+                  </motion.a>
                 ) : null}
               </div>
             </div>
@@ -406,9 +416,9 @@ export function ProjectDetail() {
         </div>
       </section>
 
-      <section className="pb-24">
+      <section className="pb-20">
         <div className="container-brutal">
-          <div className="relative space-y-7">
+          <div className="relative space-y-8">
             <DiagramConnector className="left-[25%] top-10 z-0 h-48 w-40">
               <div className="absolute left-3 top-2 h-4 w-4 rounded-full border-[3px] border-black dark:border-white bg-primary" />
               <div className="absolute left-5 top-6 h-[3px] w-28 bg-black dark:bg-white" />
@@ -423,16 +433,17 @@ export function ProjectDetail() {
               <div className="absolute right-[18%] top-[106px] grid h-5 w-5 rotate-45 place-items-center border-t-[3px] border-r-[3px] border-black dark:border-white" />
             </DiagramConnector>
 
-            <div className="relative z-10 grid gap-7 md:grid-cols-2">
+            <motion.div className="relative z-10 grid gap-6 md:grid-cols-2" variants={staggerGrid} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.1 }}>
               {orderedSections.map((sectionKey) => (
-                <div
+                <motion.div
                   key={sectionKey}
                   className={sectionKey === 'features' || sectionKey === 'impact' ? 'md:col-span-2' : ''}
+                  variants={staggerItem(0)}
                 >
                   <CaseStudyCard sectionKey={sectionKey} content={project.detailedDescription[sectionKey]} />
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             <MediaPanel project={project} onSelectImage={setSelectedImage} />
           </div>

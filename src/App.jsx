@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Home } from './pages/Home'
@@ -7,6 +7,7 @@ import { Navbar } from './components/Navbar'
 import { Footer } from './components/Footer'
 
 function App() {
+	void motion
 	const location = useLocation()
 	const [theme, setTheme] = useState(() => {
 		if (typeof window === 'undefined') return 'light'
@@ -50,36 +51,33 @@ function App() {
 	}, [location.pathname])
 
 	const pageTransition = {
-		initial: { opacity: 0, y: 10 },
-		animate: { opacity: 1, y: 0 },
-		exit: { opacity: 0, y: -10 },
-		transition: { duration: 0.25, ease: 'easeOut' },
+		initial: { opacity: 0, scale: 0.97 },
+		animate: { opacity: 1, scale: 1 },
+		exit: { opacity: 0, scale: 0.985 },
+		transition: { duration: 0.22, ease: [0.2, 0.9, 0.2, 1] },
 	}
 
-	const routerContent = useMemo(
-		() => (
-			<AnimatePresence mode="wait">
-				<Routes location={location} key={location.pathname}>
-					<Route
-						path="/"
-						element={
-							<motion.div {...pageTransition}>
-								<Home />
-							</motion.div>
-						}
-					/>
-					<Route
-						path="/projects/:projectId"
-						element={
-							<motion.div {...pageTransition}>
-								<ProjectDetail />
-							</motion.div>
-						}
-					/>
-				</Routes>
-			</AnimatePresence>
-		),
-		[location, pageTransition]
+	const routerContent = (
+		<AnimatePresence mode="wait">
+			<Routes location={location} key={location.pathname}>
+				<Route
+					path="/"
+					element={
+						<motion.div {...pageTransition}>
+							<Home />
+						</motion.div>
+					}
+				/>
+				<Route
+					path="/projects/:projectId"
+					element={
+						<motion.div {...pageTransition}>
+							<ProjectDetail />
+						</motion.div>
+					}
+				/>
+			</Routes>
+		</AnimatePresence>
 	)
 
 	return (

@@ -8,9 +8,10 @@ const aboutItems = [
 ]
 
 export function About() {
+  void motion
   return (
     <section id="about" className="section-padding scroll-offset bg-theme-main text-theme-primary">
-      <div className="container-brutal space-y-10">
+      <div className="container-brutal space-y-8">
         <SectionHeader
           kicker="About"
           title="Who I am"
@@ -26,8 +27,8 @@ export function About() {
           className="neo-card asym-card-a p-6 md:p-8 card-hover"
         >
           <div className="absolute right-0 top-0 h-5 w-24 border-b-[3px] border-l-[3px] border-black dark:border-white bg-primary" />
-          <div className="grid gap-6 lg:grid-cols-[1.15fr,0.85fr] lg:items-start">
-            <div className="list-safe space-y-5">
+          <div className="grid gap-8 lg:grid-cols-[1.2fr,0.8fr] lg:items-start">
+            <div className="list-safe space-y-6">
               <div className="inline-flex rounded-[14px] border-[3px] border-black px-4 py-2 text-sm font-black uppercase tracking-[0.16em] text-ink bg-yellow">
                 <span className="h-3 w-3 rounded-full bg-ink" />
                 <span>Profile Block</span>
@@ -47,7 +48,7 @@ export function About() {
                   whileInView={{ opacity: 1, y: 0, rotate: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ delay: index * 0.06, duration: 0.4 }}
-                  className={`neo-card-muted p-6 card-hover list-safe ${index === 1 ? 'asym-card-b lg:translate-x-5' : 'asym-card-d'} ${index === 2 ? 'lg:-translate-x-3' : ''}`}
+                  className={`neo-card-muted p-6 card-hover list-safe ${index === 1 ? 'asym-card-b lg:translate-x-4' : 'asym-card-d'} ${index === 2 ? 'lg:-translate-x-2' : ''}`}
                 >
                   <div className={`mb-4 inline-flex rounded-[12px] border-[3px] border-black px-3 py-1 text-sm font-black uppercase tracking-[0.14em] text-ink ${item.accent}`}>
                     {item.label}
