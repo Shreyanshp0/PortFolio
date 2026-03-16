@@ -1,5 +1,3 @@
-export const projectFilters = ['All', 'Web', 'Backend', 'ML/AI', 'Java', 'Open Source']
-
 export const projects = [
   {
     id: 'MindBridge',
@@ -269,5 +267,7 @@ export const projects = [
   //   video: '',
   // },
 ]
+
+export const projectFilters = ['All', ...new Set(projects.map((project) => project.category))]
 
 export const getProjectById = (id) => projects.find((p) => p.id === id)
