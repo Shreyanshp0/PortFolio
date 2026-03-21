@@ -5,9 +5,9 @@ import { mechanicalButton, sharpEase, staggerGrid, staggerItem } from '../lib/mo
 const profileImage = 'https://github.com/Shreyanshp0.png'
 
 const heroStats = [
-  { label: 'Specialty', value: 'Frontend Systems', accent: 'bg-blue', tilt: '-1deg' },
-  { label: 'Looking for', value: 'SDE / Frontend / MERN', accent: 'bg-primary', tilt: '1deg' },
-  { label: 'Focus', value: 'DX, performance, UX', accent: 'bg-yellow', tilt: '-1deg' },
+  { label: 'Specialty', value: 'MERN Stack', accent: 'bg-blue', tilt: '-1deg' },
+  { label: 'Looking for', value: 'SDE / Backend / MERN', accent: 'bg-primary', tilt: '1deg' },
+  { label: 'Focus', value: 'Backend System Designing', accent: 'bg-yellow', tilt: '-1deg' },
   { label: 'Status', value: 'Open to collaborate', accent: 'bg-pink', tilt: '1deg' },
 ]
 

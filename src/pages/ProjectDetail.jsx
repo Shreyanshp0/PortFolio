@@ -134,7 +134,7 @@ function FloatingHeader({ title, Icon, accent, positionClass }) {
           <Icon size={18} />
         </div>
         <div className="leading-none">
-          <p className="text-[10px] font-black uppercase tracking-[0.25em] opacity-70">Node</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.25em] opacity-70"></p>
           <p className="text-base font-black uppercase tracking-[0.08em]">{title}</p>
         </div>
       </div>
@@ -327,7 +327,7 @@ export function ProjectDetail() {
     <div className="bg-theme-main text-theme-primary">
       <section className="section-padding scroll-offset">
         <div className="container-brutal space-y-8">
-          <button className="neo-btn bg-yellow px-4 py-3 flex items-center gap-2 focus-brutal" onClick={() => navigate(-1)}>
+          <button className="neo-btn bg-yellow px-4 py-3 flex items-center gap-2 focus-brutal" onClick={() => navigate('/#projects')}>
             <ArrowLeft size={16} /> Back to projects
           </button>
 
@@ -353,7 +353,7 @@ export function ProjectDetail() {
 
               <div className="grid gap-8 lg:grid-cols-[1.1fr,0.9fr] lg:items-end">
                 <div className="space-y-3">
-                  <p className="text-xs font-black uppercase tracking-[0.26em] text-theme-muted">Case Study Node</p>
+                  <p className="text-xs font-black uppercase tracking-[0.26em] text-theme-muted">Case Study</p>
                   <h1 className="text-4xl md:text-5xl font-black leading-none tracking-tight">{project.title}</h1>
                   <p className="max-w-3xl text-lg text-theme-secondary">{project.description}</p>
                 </div>

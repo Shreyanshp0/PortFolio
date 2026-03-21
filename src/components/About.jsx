@@ -2,9 +2,9 @@ import { motion } from 'framer-motion'
 import { SectionHeader } from './SectionHeader'
 
 const aboutItems = [
-  { label: 'Academic focus', value: 'TODO: e.g., Systems + Web', accent: 'bg-blue' },
-  { label: 'Career interests', value: 'Frontend Engineering, SDE, Developer Tools', accent: 'bg-primary' },
-  { label: 'Technology focus', value: 'React, Node.js, Cloud basics', accent: 'bg-pink' },
+  { label: 'Academic focus', value: 'Web Development + Software Testing', accent: 'bg-blue' },
+  { label: 'Career interests', value: 'Backend Engineering, SDE, Developer Tools', accent: 'bg-primary' },
+  { label: 'Technology focus', value: 'React, Node.js, Express', accent: 'bg-pink' },
 ]
 
 export function About() {
@@ -15,7 +15,8 @@ export function About() {
         <SectionHeader
           kicker="About"
           title="Who I am"
-          description="A quick overview of my academic background, career interests, and the technologies I enjoy working with."
+          description="I am a B.Tech Computer Science student passionate about full stack web development and building AI-powered applications. I enjoy creating practical, user-focused solutions using modern technologies.
+"
           accent="yellow"
         />
 
@@ -34,9 +35,7 @@ export function About() {
                 <span>Profile Block</span>
               </div>
               <p className="text-lg leading-relaxed text-theme-secondary">
-                TODO: Write your personal bio. Highlight your academic path, what sparked your interest in MERN
-                development, and the kind of products you love crafting. Mention your focus on performance,
-                accessibility, and building delightful developer experiences.
+                I am a B.Tech Computer Science student with a strong passion for full stack (MERN) development and building intelligent, AI-powered web applications. My interest in MERN evolved through working on real-world projects where I could seamlessly integrate frontend design with powerful backend systems. I enjoy crafting scalable, high-performance applications with a strong emphasis on clean architecture, accessibility, and intuitive user experiences. Alongside this, I focus on writing maintainable code and creating smooth, efficient developer workflows that enhance both productivity and product quality.
               </p>
             </div>
 

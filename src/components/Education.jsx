@@ -11,7 +11,7 @@ export function Education() {
         <SectionHeader
           kicker="Education"
           title="Academic journey"
-          description="Keep this concise and focused on what matters for placements."
+          description="A concise overview of my formal education and foundational computer science studies."
           accent="blue"
         />
 
@@ -29,7 +29,8 @@ export function Education() {
               <div className="pt-6">
                 <h3 className="text-xl font-black">{edu.degree}</h3>
                 <p className="mt-1 text-sm font-semibold">{edu.school}</p>
-                <p className="text-xs text-theme-muted">{edu.timeline}</p>
+                <p className="text-sm text-theme-secondary">{edu.Location}</p>
+                <p className="mt-1 text-xs text-theme-muted">{edu.timeline}</p>
                 <TagBadge accent="primary" className="mt-6 inline-flex text-sm font-black">CGPA: {edu.cgpa}</TagBadge>
                 <div className="flex flex-wrap gap-2 mt-6">
                   {edu.coursework.map((course, courseIndex) => (

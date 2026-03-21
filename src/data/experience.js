@@ -27,11 +27,28 @@ export const experiences = [
 
 export const education = [
   {
-    degree: 'TODO: B.Tech / B.E. in Computer Science',
-    school: 'TODO: University / College name',
-    cgpa: 'TODO: CGPA / Percentage',
-    timeline: 'TODO: YYYY - YYYY',
-    coursework: ['DSA', 'Operating Systems', 'DBMS', 'Computer Networks', 'Software Engineering'],
+    degree: 'B.Tech in Computer Science & Engineering',
+    school: 'Lovely Professional University',
+    Location: 'Phagwara, Punjab',
+    cgpa: '7.92',
+    timeline: 'Ongoing',
+    coursework: ['DSA', 'Operating Systems', 'DBMS', 'Software Testing', 'Software Engineering', 'Android Development'],
+  },
+  {
+    degree: 'Intermediate (Class 12)',
+    school: 'St.Thereses School',
+    Location:"Padrauna, Kushinagar, Uttar Pradesh",
+    cgpa: '80.25',
+    timeline: '2022-2023',
+    coursework: ['Physics', 'Chemistry', 'Mathematics','English', 'Hindi'],
+  },
+   {
+    degree: 'Matriculation (Class 10)',
+    school: 'St.Thereses School',
+    Location:"Padrauna, Kushinagar, Uttar Pradesh",
+    cgpa: '83',
+    timeline: '2020-2021',
+    coursework: ['Physics', 'Chemistry', 'Mathematics','English', 'Hindi','Computer Science'],
   },
 ]
 

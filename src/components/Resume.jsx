@@ -50,8 +50,8 @@ export function Resume() {
           </div>
           <div className="neo-card-muted asym-card-b w-full md:w-1/2 min-h-64 grid place-items-center text-center p-6 bg-blue">
             <div className="space-y-2">
-              <p className="text-sm font-black text-ink">Embed or preview your resume here</p>
-              <p className="text-xs font-semibold text-ink/80">Or just use the buttons to the left</p>
+              <p className="text-sm font-black text-ink">Results-driven Full Stack Developer with strong expertise in MERN stack, RESTful APIs, and scalable system design, demonstrated through building a real-time AI-powered telemedicine platform with secure video consultations and optimized workflows. Proven ability to enhance performance and efficiency, reducing memory usage by 40% and achieving millisecond-level response times in data-driven applications. Skilled in backend automation, real-time communication technologies, and data structures, with hands-on experience solving 100+ DSA problems to strengthen algorithmic thinking. Recognized as a top performer in a web hackathon, showcasing innovation, problem-solving, and project execution excellence.</p>
+              
             </div>
           </div>
         </motion.div>

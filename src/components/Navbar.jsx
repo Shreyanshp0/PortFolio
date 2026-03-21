@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { Menu, Moon, Sun, X } from 'lucide-react'
 import { mechanicalButton, sharpEase } from '../lib/motion'
 
@@ -24,6 +25,23 @@ export function Navbar({ onToggleTheme, theme }) {
   const [open, setOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
   const observer = useRef(null)
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const goToSection = (event, sectionId) => {
+    event.preventDefault()
+
+    if (location.pathname === '/') {
+      const target = document.getElementById(sectionId)
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    } else {
+      navigate(`/#${sectionId}`)
+    }
+
+    setOpen(false)
+  }
 
   useEffect(() => {
     observer.current = new IntersectionObserver(
@@ -68,6 +86,7 @@ export function Navbar({ onToggleTheme, theme }) {
                   <motion.a
                     key={item}
                     href={`#${item}`}
+                    onClick={(event) => goToSection(event, item)}
                     className={`relative shrink-0 whitespace-nowrap px-1 py-2 rounded-[10px] border-[3px] border-transparent ${
                       isActive ? `text-ink border-black` : 'hover:bg-blue/60 hover:border-black/20'
                     }`}
@@ -127,10 +146,10 @@ export function Navbar({ onToggleTheme, theme }) {
               <motion.a
                 key={item}
                 href={`#${item}`}
+                onClick={(event) => goToSection(event, item)}
                 className={`px-3 py-2 rounded-[10px] transition-colors ${
                   index % 4 === 0 ? 'hover:bg-primary hover:text-ink' : index % 4 === 1 ? 'hover:bg-yellow hover:text-ink' : index % 4 === 2 ? 'hover:bg-blue hover:text-ink' : 'hover:bg-pink hover:text-ink'
                 }`}
-                onClick={() => setOpen(false)}
                 aria-current={activeSection === item ? 'location' : undefined}
                 whileHover={{ x: -2, y: -2, transition: { duration: 0.15, ease: sharpEase } }}
               >

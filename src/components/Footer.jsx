@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { sharpEase } from '../lib/motion'
 
-function FooterLink({ href, children, external = false }) {
+function FooterLink({ href, children, external = false, onClick }) {
   return (
     <motion.a
       href={href}
+      onClick={onClick}
       target={external ? '_blank' : undefined}
       rel={external ? 'noreferrer' : undefined}
       className="relative inline-block"
@@ -23,12 +25,29 @@ function FooterLink({ href, children, external = false }) {
 
 export function Footer() {
   void motion
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const goToTop = (event) => {
+    event.preventDefault()
+
+    if (location.pathname === '/') {
+      const hero = document.getElementById('hero')
+      if (hero) {
+        hero.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+      return
+    }
+
+    navigate('/#hero')
+  }
+
   return (
     <footer className="py-8 bg-theme-navbar text-theme-primary">
       <div className="container-brutal flex flex-col items-center justify-between gap-6 md:flex-row">
         <p className="text-sm font-semibold">Built with React, Tailwind, and lots of coffee</p>
         <div className="flex gap-6 text-sm">
-          <FooterLink href="#hero">Back to top</FooterLink>
+          <FooterLink href="#hero" onClick={goToTop}>Back to top</FooterLink>
           <FooterLink href="https://github.com/Shreyanshp0" external>
             GitHub
           </FooterLink>

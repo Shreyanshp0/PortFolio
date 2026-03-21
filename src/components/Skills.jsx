@@ -20,7 +20,7 @@ export function Skills() {
         <SectionHeader
           kicker="Skills"
           title="Core toolkit"
-          description="Neo-brutalist cards grouped by area. Update the TODOs with your stack before sharing."
+          description="A comprehensive overview of my technical proficiencies, frameworks, and foundational computer science skills."
           accent="blue"
         />
 

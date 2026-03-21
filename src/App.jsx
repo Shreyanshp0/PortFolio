@@ -45,10 +45,40 @@ function App() {
 		setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
 	}
 
-	// Scroll to top on route change to avoid odd offsets on detail pages.
+	// Support deep-link navigation to home sections from other routes via /#section.
 	useEffect(() => {
-		window.scrollTo({ top: 0, behavior: 'smooth' })
-	}, [location.pathname])
+		const hash = location.hash?.replace('#', '')
+
+		if (!hash) {
+			window.scrollTo({ top: 0, behavior: 'smooth' })
+			return
+		}
+
+		let attempts = 0
+		let timer = null
+		const maxAttempts = 20
+
+		const scrollToHashTarget = () => {
+			const target = document.getElementById(hash)
+			if (target) {
+				target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+				return
+			}
+
+			if (attempts < maxAttempts) {
+				attempts += 1
+				timer = window.setTimeout(scrollToHashTarget, 50)
+			}
+		}
+
+		scrollToHashTarget()
+
+		return () => {
+			if (timer) {
+				window.clearTimeout(timer)
+			}
+		}
+	}, [location.pathname, location.hash])
 
 	const pageTransition = {
 		initial: { opacity: 0, scale: 0.97 },

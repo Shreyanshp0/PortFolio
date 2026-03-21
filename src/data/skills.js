@@ -2,7 +2,7 @@ export const skillGroups = [
   {
     title: 'Languages',
     accent: 'primary',
-    items: ['JavaScript (ES2023)', 'TypeScript', 'Python', 'C/C++', 'SQL', 'TODO: Add more languages you love'],
+    items: ['JavaScript (ES2023)', 'Java', 'Python', 'C/C++', 'SQL', 'Bash'],
   },
   {
     title: 'Frontend',
@@ -17,6 +17,6 @@ export const skillGroups = [
   {
     title: 'Tools',
     accent: 'blue',
-    items: ['Git & GitHub', 'CI (GitHub Actions)', 'Docker basics', 'Postman/Insomnia', 'Jest + Vitest', 'TODO: Add your favorite editor plugins'],
+    items: ['Git & GitHub', 'CI (GitHub Actions)', 'Docker basics', 'Postman/Insomnia', 'Jest + Vitest', 'VS Code + extensions'],
   },
 ]
