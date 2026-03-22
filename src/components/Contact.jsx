@@ -111,8 +111,8 @@ export function Contact() {
               Direct Links
             </div>
             <div className="flex flex-col gap-4">
-              <motion.a className="neo-btn bg-yellow text-ink px-4 py-3 flex items-center gap-2" href="mailto:todo@email.com" {...mechanicalButton}>
-                <Mail size={18} /> TODO: Add email
+              <motion.a className="neo-btn bg-yellow text-ink px-4 py-3 flex items-center gap-2" href="mailto:your.actual@email.com" {...mechanicalButton}>
+                <Mail size={18} /> Email Me
               </motion.a>
               <motion.a
                 className="neo-btn bg-theme-card text-theme-primary px-4 py-3 flex items-center gap-2"

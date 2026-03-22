@@ -2,27 +2,16 @@ export const experiences = [
   {
     company: 'ARV Foundation',
     role: 'Frontend Developer (NGO)',
-    team: 'Team of 4',
-    period: 'TODO: Month YYYY - Month YYYY',
+    team: 'Team of 5',
+    period: 'Feb 2026 - Present',
     technologies: ['React', 'Tailwind', 'Framer Motion', 'Node.js'],
     contributions: [
       'Built a donations and volunteering experience with clear CTAs and accessibility checks.',
       'Collaborated with NGO stakeholders to map user journeys for donors and volunteers.',
       'Instrumented Lighthouse audits and shipped a performance budget.',
-      'TODO: Add your measurable impact (e.g., +X% conversions, faster load).',
     ],
-  },
-  {
-    company: 'Freelance / Open Source',
-    role: 'Full Stack Developer',
-    team: 'Solo + collaborators',
-    period: 'Ongoing',
-    technologies: ['React', 'Express', 'MongoDB', 'CI/CD'],
-    contributions: [
-      'Shipping small tools, components, and starter kits for the community.',
-      'Reviewing PRs and contributing to documentation and tests.',
-    ],
-  },
+    WhatILearned: 'Working with an NGO taught me how to balance user needs with organizational goals, and how to build empathetic, inclusive web experiences that drive real-world impact.',
+  }
 ]
 
 export const education = [

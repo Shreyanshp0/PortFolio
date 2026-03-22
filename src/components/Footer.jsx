@@ -24,7 +24,6 @@ function FooterLink({ href, children, external = false, onClick }) {
 }
 
 export function Footer() {
-  void motion
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -51,7 +50,7 @@ export function Footer() {
           <FooterLink href="https://github.com/Shreyanshp0" external>
             GitHub
           </FooterLink>
-          <FooterLink href="mailto:todo@email.com">Email</FooterLink>
+          <FooterLink href="mailto:your.actual@email.com">Email</FooterLink>
         </div>
       </div>
     </footer>

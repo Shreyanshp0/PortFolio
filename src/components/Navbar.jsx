@@ -82,6 +82,7 @@ export function Navbar({ onToggleTheme, theme }) {
               {navItems.map((item, index) => {
                 const isActive = activeSection === item
                 const accentColor = navAccentColors[index % navAccentColors.length]
+
                 return (
                   <motion.a
                     key={item}
@@ -106,7 +107,7 @@ export function Navbar({ onToggleTheme, theme }) {
                       ) : null}
                     </AnimatePresence>
                     <span className="relative z-10">
-                    {item.charAt(0).toUpperCase() + item.slice(1)}
+                      {item.charAt(0).toUpperCase() + item.slice(1)}
                     </span>
                   </motion.a>
                 )
