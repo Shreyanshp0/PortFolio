@@ -4,20 +4,21 @@ import { activities } from '../data/experience'
 
 export function Activities() {
   void motion
+
   return (
     <section id="activities" className="section-padding scroll-offset bg-theme-main text-theme-primary">
       <div className="container-brutal space-y-8">
         <SectionHeader
           kicker="Extracurricular"
           title="Beyond the classroom"
-          description="Showcase community work, volunteering, clubs, or open-source involvement."
+          description="I approach software like a blend of engineering and creativity — music production has trained my attention to detail and sense of user experience, while gaming has sharpened my problem-solving and system thinking."
           accent="primary"
         />
 
         <div className="grid gap-6 sm:grid-cols-2">
           {activities.map((activity, index) => (
             <motion.div
-              key={activity}
+              key={`${activity.Activityname}-${index}`}
               initial={{ opacity: 0, y: 20, rotate: index % 2 === 0 ? -1.5 : 1.5 }}
               whileInView={{ opacity: 1, y: 0, rotate: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -27,7 +28,10 @@ export function Activities() {
               <div className={`mb-6 inline-flex rounded-[12px] border-[3px] border-black px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-ink ${index % 2 === 0 ? 'bg-primary' : 'bg-yellow'}`}>
                 Activity Node
               </div>
-              <p className="text-lg font-black">{activity}</p>
+              <div className="space-y-3">
+                <h3 className="text-xl font-black leading-tight text-theme-primary">{activity.Activityname}</h3>
+                <p className="text-base leading-relaxed text-theme-secondary">{activity.description}</p>
+              </div>
             </motion.div>
           ))}
         </div>

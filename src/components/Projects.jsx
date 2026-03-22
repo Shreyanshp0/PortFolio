@@ -5,7 +5,7 @@ import { ExternalLink, Github } from 'lucide-react'
 import { SectionHeader } from './SectionHeader'
 import { projects, projectFilters } from '../data/projects'
 import { GithubWidget } from './GithubWidget'
-import { cardLift, mechanicalButton, staggerGrid, staggerItem, sharpEase } from '../lib/motion'
+import { cardLift, mechanicalButton, sharpEase } from '../lib/motion'
 import { TagBadge } from './ui/TagBadge'
 
 const projectShapes = ['asym-card-a', 'asym-card-b', 'asym-card-d', 'asym-card-c']
@@ -60,20 +60,16 @@ export function Projects() {
         </div>
 
         <div className="grid gap-8 xl:grid-cols-[1.3fr,0.7fr]">
-          <motion.div
-            className="relative grid gap-6 sm:grid-cols-2 xl:grid-cols-3"
-            variants={staggerGrid}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.15 }}
-          >
+          <div className="relative grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             <div className="system-connector left-[24%] top-28 h-[3px] w-[20%] bg-black dark:bg-white opacity-30" />
             <div className="system-connector left-[44%] top-28 h-14 w-[3px] bg-black dark:bg-white opacity-30" />
             {filtered.length ? (
               filtered.map((project, idx) => (
                 <motion.div
-                  key={project.id}
-                  variants={staggerItem(idx % 2 === 0 ? -2 : 2)}
+                  key={`${activeFilter}-${project.id}`}
+                  initial={{ opacity: 0, y: 24, rotate: idx % 2 === 0 ? -2 : 2 }}
+                  animate={{ opacity: 1, y: 0, rotate: 0 }}
+                  transition={{ duration: 0.28, delay: idx * 0.04 }}
                   className={`neo-card p-6 h-full flex flex-col justify-between card-hover cursor-pointer list-safe focus-brutal ${
                     projectShapes[idx % projectShapes.length]
                   } ${idx % 3 === 1 ? 'lg:translate-y-7' : idx % 3 === 2 ? 'lg:-translate-y-4' : ''}`}
@@ -150,7 +146,7 @@ export function Projects() {
                 <p className="mt-2 text-sm text-theme-secondary">Try another filter or add a project with this category.</p>
               </div>
             )}
-          </motion.div>
+          </div>
 
           <div className="xl:pt-8">
             <GithubWidget />

@@ -16,13 +16,13 @@ export function Home() {
       <Hero />
       <About />
       <Skills />
+      <Resume />
       <Projects />
       <Experience />
       <Education />
       <Certifications />
       <Achievements />
       <Activities />
-      <Resume />
       <Contact />
     </div>
   )

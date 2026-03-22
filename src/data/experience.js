@@ -41,29 +41,51 @@ export const education = [
   },
 ]
 
+import cert1 from '../../Reference image/Certificates/Infosys certificate/Build Generative AI Apps and Solutions with No-Code Tools.pdf'
+import cert2 from '../../Reference image/Certificates/Infosys certificate/ChatGPT-4 Prompt Engineering ChatGPT, Generative AI & LLM.pdf'
+import cert3 from '../../Reference image/Certificates/Infosys certificate/Fundamental of Data Structure Learn, apply and build Projects.pdf'
+import cert4 from '../../Reference image/Certificates/Introduction to Hardware and Operating Systems.pdf'
+
 export const certifications = [
   {
-    name: 'TODO: Certificate name',
-    org: 'TODO: Issuer (Coursera, AWS, etc.)',
-    date: 'TODO: Completion date',
+    name: 'Build Generative AI Apps and Solutions with No-Code Tools',
+    org: 'Infosys Spring Board',
+    date: 'August 24, 2025',
+    CertificatePDF: cert1
   },
   {
-    name: 'Responsive Web Design',
-    org: 'freeCodeCamp',
-    date: '2024',
+    name: 'ChatGPT-4 Prompt Engineering: ChatGPT, Generative AI & LLM',
+    org: 'Infosys Spring Board',
+    date: 'August 25, 2025',
+    CertificatePDF: cert2
+  },
+  {
+    name: 'Fundamental of Data Structure: Learn, apply and build Projects',
+    org: 'Center of Professional Enhancement | LPU',
+    date: 'July 16, 2025',
+    CertificatePDF: cert3
+  },
+  {
+    name: 'Introduction to Hardware and Operating Systems',
+    org: 'Coursera',
+    date: 'September 16, 2024',
+    CertificatePDF: cert4
   },
 ]
 
 export const achievements = [
-  'TODO: Add hackathon wins or shortlists',
-  'TODO: Add academic awards or scholarships',
-  'Built and maintained 3+ production-ready side projects with users.',
+  'Scored a freelance project within 2 weeks of learning MERN Stack, and working on it for last one month.',
+  'No reappear in any semester till now and maintaining a good CGPA.',
   'Mentored peers on Git, pull requests, and review workflows.',
 ]
 
 export const activities = [
-  'Volunteer mentor at local coding club, running weekly React labs.',
-  'Technical blogging on performance and DX topics.',
-  'Open-source contributions to UI component libraries.',
-  'TODO: Add clubs, communities, or leadership roles.',
+  {
+    Activityname: 'Music Production',
+    description :'How I unwind: I produce music, blending genres to create unique soundscapes. It’s my creative outlet and a way to relax after coding sessions.',
+  },
+  {
+    Activityname: 'Gaming',
+    description :'Gaming is my go-to for fun and strategy. I enjoy immersive storylines and competitive play, which also helps me think critically and unwind.',
+  }
 ]

@@ -8,13 +8,13 @@ const navItems = [
   'hero',
   'about',
   'skills',
+  'resume',
   'projects',
   'experience',
   'education',
   'certifications',
   'achievements',
   'activities',
-  'resume',
   'contact',
 ]
 
