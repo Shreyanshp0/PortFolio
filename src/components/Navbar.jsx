@@ -7,8 +7,8 @@ import { mechanicalButton, sharpEase } from '../lib/motion'
 const navItems = [
   'hero',
   'about',
-  'skills',
   'resume',
+  'skills',
   'projects',
   'experience',
   'education',

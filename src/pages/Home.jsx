@@ -15,8 +15,8 @@ export function Home() {
     <div className="bg-theme-main text-theme-primary">
       <Hero />
       <About />
-      <Skills />
       <Resume />
+      <Skills />
       <Projects />
       <Experience />
       <Education />

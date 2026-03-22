@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowUpRight, Download, Github, Linkedin } from 'lucide-react'
 import { sharpEase } from '../lib/motion'
 
-const profileImage = 'https://github.com/Shreyanshp0.png'
+import profileImage from '../../Reference image/Profile pic.png'
 
 const heroStats = [
   { label: 'Specialty', value: 'MERN Stack', accent: 'bg-blue', tilt: '-1deg' },
@@ -86,6 +86,7 @@ const floatingTransition = (duration, delay = 0) => ({
 })
 
 export function Hero() {
+  void motion
   const prefersReducedMotion = useReducedMotion()
 
   return (

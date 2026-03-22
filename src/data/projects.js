@@ -1,3 +1,18 @@
+import arv1 from '../../Reference image/Project Snapshots/Arv-Foundation/ARV-1.png'
+import arv2 from '../../Reference image/Project Snapshots/Arv-Foundation/ARV-2.png'
+import arv3 from '../../Reference image/Project Snapshots/Arv-Foundation/ARV-3.png'
+import arv4 from '../../Reference image/Project Snapshots/Arv-Foundation/ARV-4.png'
+import escape1 from '../../Reference image/Project Snapshots/Escape-Ai/Screenshot 2025-04-25 091918.png'
+import escape2 from '../../Reference image/Project Snapshots/Escape-Ai/Screenshot 2025-04-25 092027.png'
+import escape3 from '../../Reference image/Project Snapshots/Escape-Ai/Screenshot 2025-04-25 092129.png'
+import escape4 from '../../Reference image/Project Snapshots/Escape-Ai/Screenshot 2025-04-25 092458.png'
+import travelBuddy1 from '../../Reference image/Project Snapshots/TravelBuddy/Screenshot 2025-07-10 164221.png'
+import travelBuddy2 from '../../Reference image/Project Snapshots/TravelBuddy/Screenshot 2025-07-10 211745.png'
+import travelBuddy3 from '../../Reference image/Project Snapshots/TravelBuddy/Screenshot 2025-07-10 211809.png'
+import travelBuddy4 from '../../Reference image/Project Snapshots/TravelBuddy/Screenshot 2025-07-10 211824.png'
+import travelBuddy5 from '../../Reference image/Project Snapshots/TravelBuddy/Screenshot 2025-07-10 211839.png'
+import travelBuddy6 from '../../Reference image/Project Snapshots/TravelBuddy/Screenshot 2025-07-10 211853.png'
+
 export const projects = [
   {
     id: 'MindBridge',
@@ -55,7 +70,7 @@ export const projects = [
         'Maintaining patient privacy across messaging, calls, and stored summaries.',
       ],
     },
-    images: ['/assets/projects/devlaunchpad-1.png', '/assets/projects/devlaunchpad-2.png'],
+    images: [],
     video: '',
   },
   {
@@ -121,7 +136,7 @@ export const projects = [
         'Improved turnout and material donations by keeping active drives updated in real time on the public website.',
       ],
     },
-    images: ['/assets/projects/api-lab-1.png', '/assets/projects/api-lab-2.png'],
+    images: [arv1, arv2, arv3, arv4],
     video: '',
   },
   {
@@ -185,7 +200,7 @@ export const projects = [
         'Serves as a practical, portfolio-ready prototype that solves a clear user pain point in an immersive and intuitive way.',
       ],
     },
-    images: ['/assets/projects/vision-1.png', '/assets/projects/vision-2.png'],
+    images: [escape1, escape2, escape3, escape4],
     video: '',
   },
   {
@@ -244,7 +259,7 @@ export const projects = [
         'Demonstrates attention to user experience by pairing practical utility with a polished and visually appealing interface.',
       ],
     },
-    images: ['/assets/projects/cli-1.png', '/assets/projects/cli-2.png'],
+    images: [travelBuddy1, travelBuddy2, travelBuddy3, travelBuddy4, travelBuddy5, travelBuddy6],
     video: '',
   },
   // {
