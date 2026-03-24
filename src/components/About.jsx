@@ -12,7 +12,7 @@ const storyChunks = [
 const aboutCards = [
   {
     title: 'Current Status',
-    value: 'Final-year CS student building production-ready MERN systems.',
+    value: 'Third-year CS student building production-ready MERN systems.',
     accent: 'bg-blue',
     icon: UserRound,
   },
