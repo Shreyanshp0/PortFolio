@@ -13,7 +13,7 @@ export function Resume() {
         <SectionHeader
           kicker="Resume"
           title="One-page snapshot"
-          description="Add a crisp, metrics-focused resume. Keep it to one page for quick screening."
+          description="A quick snapshot of my journey, skills, and impact—all in one page"
           accent="pink"
         />
 

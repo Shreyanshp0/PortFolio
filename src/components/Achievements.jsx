@@ -11,7 +11,7 @@ export function Achievements() {
         <SectionHeader
           kicker="Achievements"
           title="Highlights & wins"
-          description="Short, outcome-driven bullets."
+          description="Turning milestones into momentum—here’s a glimpse of what I’ve accomplished so far."
           accent="yellow"
         />
 

@@ -35,7 +35,7 @@ export function Contact() {
         <SectionHeader
           kicker="Contact"
           title="Let's build together"
-          description="Form posts to your Express + Mongo backend. Hook this into the provided server route."
+          description="Feel free to reach out for collaborationLet’s turn your ideas into reality—reach out and let’s build something amazing together."
           accent="primary"
         />
 
@@ -132,13 +132,7 @@ export function Contact() {
                 <Linkedin size={18} /> LinkedIn
               </motion.a>
             </div>
-            <div className="neo-card-muted asym-card-d p-6 bg-pink text-ink">
-              <p className="text-sm font-semibold">
-                Backend lives at <span className="font-black">/api/contact</span>. Configure your{' '}
-                <span className="font-black">MONGO_URI</span> in <span className="font-black">server/.env</span>, then run{' '}
-                <span className="font-black">npm run dev:full</span>.
-              </p>
-            </div>
+           
           </motion.div>
         </div>
       </div>

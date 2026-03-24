@@ -40,7 +40,7 @@ export function Projects() {
         <SectionHeader
           kicker="Projects"
           title="Featured builds"
-          description="A mix of full-stack, API, and open-source projects. Update the TODO placeholders with your real links and metrics."
+          description="A mix of full-stack, API, and open-source projects. Where ideas meet execution—explore the projects that define my work"
           accent="pink"
         />
 

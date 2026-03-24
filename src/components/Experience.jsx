@@ -14,7 +14,7 @@ export function Experience() {
         <SectionHeader
           kicker="Experience"
           title="Impactful collaborations"
-          description="Highlighting NGO and freelance work. Fill the TODOs with your timelines and metrics."
+          description="Building impact through meaningful collaborations that turn ideas into real-world results."
           accent="primary"
         />
 
