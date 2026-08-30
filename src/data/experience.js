@@ -14,62 +14,14 @@ export const experiences = [
   }
 ]
 
-export const education = [
-  {
-    degree: 'B.Tech in Computer Science & Engineering',
-    school: 'Lovely Professional University',
-    Location: 'Phagwara, Punjab',
-    cgpa: '7.92',
-    timeline: 'Ongoing',
-    coursework: ['DSA', 'Operating Systems', 'DBMS', 'Software Testing', 'Software Engineering', 'Android Development'],
-  },
-  {
-    degree: 'Intermediate (Class 12)',
-    school: 'St.Thereses School',
-    Location:"Padrauna, Kushinagar, Uttar Pradesh",
-    cgpa: '80.25',
-    timeline: '2022-2023',
-    coursework: ['Physics', 'Chemistry', 'Mathematics','English', 'Hindi'],
-  },
-   {
-    degree: 'Matriculation (Class 10)',
-    school: 'St.Thereses School',
-    Location:"Padrauna, Kushinagar, Uttar Pradesh",
-    cgpa: '83',
-    timeline: '2020-2021',
-    coursework: ['Physics', 'Chemistry', 'Mathematics','English', 'Hindi','Computer Science'],
-  },
-]
-
 import cert1 from '../../Reference image/Certificates/AbhinavCertificate.pdf'
-import cert2 from '../../Reference image/Certificates/AbhinavCertificate.pdf'
-import cert3 from '../../Reference image/Certificates/AbhinavCertificate.pdf'
-import cert4 from '../../Reference image/Certificates/AbhinavCertificate.pdf'
 
 export const certifications = [
   {
-    name: 'Build Generative AI Apps and Solutions with No-Code Tools',
+    name: 'Computer Network & Internet Security',
     org: 'Infosys Spring Board',
-    date: 'August 24, 2025',
+    date: 'August 24, 2026',
     CertificatePDF: cert1
-  },
-  {
-    name: 'ChatGPT-4 Prompt Engineering: ChatGPT, Generative AI & LLM',
-    org: 'Infosys Spring Board',
-    date: 'August 25, 2025',
-    CertificatePDF: cert2
-  },
-  {
-    name: 'Fundamental of Data Structure: Learn, apply and build Projects',
-    org: 'Center of Professional Enhancement | LPU',
-    date: 'July 16, 2025',
-    CertificatePDF: cert3
-  },
-  {
-    name: 'Introduction to Hardware and Operating Systems',
-    org: 'Coursera',
-    date: 'September 16, 2024',
-    CertificatePDF: cert4
   },
 ]
 

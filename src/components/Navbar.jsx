@@ -11,7 +11,6 @@ const navItems = [
   'skills',
   'projects',
   'experience',
-  'education',
   'certifications',
   'achievements',
   'activities',
