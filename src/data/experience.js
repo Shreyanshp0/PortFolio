@@ -41,10 +41,10 @@ export const education = [
   },
 ]
 
-import cert1 from '../../Reference image/Certificates/Infosys certificate/Build Generative AI Apps and Solutions with No-Code Tools.pdf'
-import cert2 from '../../Reference image/Certificates/Infosys certificate/ChatGPT-4 Prompt Engineering ChatGPT, Generative AI & LLM.pdf'
-import cert3 from '../../Reference image/Certificates/Infosys certificate/Fundamental of Data Structure Learn, apply and build Projects.pdf'
-import cert4 from '../../Reference image/Certificates/Introduction to Hardware and Operating Systems.pdf'
+import cert1 from '../../Reference image/Certificates/AbhinavCertificate.pdf'
+import cert2 from '../../Reference image/Certificates/AbhinavCertificate.pdf'
+import cert3 from '../../Reference image/Certificates/AbhinavCertificate.pdf'
+import cert4 from '../../Reference image/Certificates/AbhinavCertificate.pdf'
 
 export const certifications = [
   {

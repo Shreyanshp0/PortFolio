@@ -73,7 +73,7 @@ export function Navbar({ onToggleTheme, theme }) {
           <div className="flex items-center justify-between gap-4">
             <div className="flex shrink-0 items-center gap-4">
               <div className="shrink-0 leading-tight">
-                <p className="text-sm font-black">Shreyansh Pandey</p>
+                <p className="text-sm font-black">Abhinav Thakur</p>
                 <p className="text-xs text-theme-secondary">Full Stack / MERN</p>
               </div>
             </div>
