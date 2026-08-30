@@ -22,7 +22,7 @@ export const projects = [
       'MindBridge AI is a full-stack mental wellness platform that connects patients with licensed therapists for secure chat and video consultations, backed by an intelligent assessment engine and real-time notifications.',
     highlight: 'Features sophisticated real-time architecture, which seamlessly integrates secure WebRTC video calls, live chat, and AI-powered features to deliver a comprehensive teletherapy experience',
     techStack: ['React', 'Vite', 'Tailwind', 'Framer Motion','Node.js','Express','MongoDB'],
-    githubLink: 'https://github.com/Shreyanshp0/Ai-Wellness-platform',
+    githubLink: 'https://github.com/abhinavthakurr23/Ai-Wellness-platform',
     detailedDescription: {
       problem: [
         'Social stigma around mental health stops many users from asking for help early.',
@@ -81,7 +81,7 @@ export const projects = [
       'Full-stack NGO management platform and CMS that powers the Arv Foundation public website while centralizing internships, volunteers, donations, and partnership inquiries in one admin system.',
     highlight: 'Combines a public-facing NGO portal with a custom CMS so non-technical admins can update drives, galleries, and outreach data without developer support.',
     techStack: ['React', 'Framer Motion', 'Node.js', 'Express', 'MongoDB', 'Mongoose', 'bcryptjs'],
-    githubLink: 'https://github.com/Shreyanshp0/Arv-Foundation',
+    githubLink: 'https://github.com/abhinavthakurr23/Arv-Foundation',
     liveDemo: '',
     detailedDescription: {
       problem: [
@@ -147,7 +147,7 @@ export const projects = [
       'An AI-powered web application that acts as a real-time assistant for escape room players, solving both text-based riddles and visual puzzles from a camera or image upload.',
     highlight: 'Features a point-and-solve experience using a live device camera and multimodal AI to instantly analyze and provide hints for physical puzzles.',
     techStack: ['Python', 'Flask', 'JavaScript', 'HTML5', 'CSS3', 'Google Gemini 1.5 Flash', 'Hugging Face Inference API', 'WebRTC', 'Canvas API'],
-    githubLink: 'https://github.com/Shreyanshp0/Escape-room-assistant',
+    githubLink: 'https://github.com/abhinavthakurr23/Escape-room-assistant',
     liveDemo: '',
     detailedDescription: {
       problem: [
@@ -211,7 +211,7 @@ export const projects = [
       'A desktop travel planner built with Java Swing to explore Indian cities, view attractions, and get hotel suggestions with cost estimates.',
     highlight: 'An interactive Java Swing application for exploring Indian cities and planning travel itineraries with dynamic hotel suggestions.',
     techStack: ['Java', 'Java Swing', 'OOP', 'Linked List', 'HashMap', 'JFrame', 'JPanel'],
-    githubLink: 'https://github.com/Shreyanshp0/Travel-Buddy',
+    githubLink: 'https://github.com/abhinavthakurr23/Travel-Buddy',
     liveDemo: '',
     detailedDescription: {
       problem: [
@@ -269,7 +269,7 @@ export const projects = [
   //   description: 'dd your flagship project for placements with metrics and outcomes.',
   //   highlight: 'Mention impact: users, performance, or revenue.',
   //   techStack: ['TODO: Tech stack'],
-  //   githubLink: 'https://github.com/Shreyanshp0/todo-project',
+  //   githubLink: 'https://github.com/abhinavthakurr23/todo-project',
   //   liveDemo: 'https://todo-project.example.com',
   //   detailedDescription: {
   //     problem: ['Describe the problem space and user pain points.'],

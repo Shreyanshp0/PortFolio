@@ -47,7 +47,7 @@ export function Footer() {
         <p className="text-sm font-semibold">Built with React, Tailwind, and lots of coffee</p>
         <div className="flex gap-6 text-sm">
           <FooterLink href="#hero" onClick={goToTop}>Back to top</FooterLink>
-          <FooterLink href="https://github.com/Shreyanshp0" external>
+          <FooterLink href="https://github.com/abhinavthakurr23" external>
             GitHub
           </FooterLink>
           <FooterLink href="mailto:your.actual@email.com">Email</FooterLink>

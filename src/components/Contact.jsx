@@ -116,7 +116,7 @@ export function Contact() {
               </motion.a>
               <motion.a
                 className="neo-btn bg-theme-card text-theme-primary px-4 py-3 flex items-center gap-2"
-                href="https://github.com/Shreyanshp0"
+                href="https://github.com/abhinavthakurr23"
                 {...mechanicalButton}
               >
                 <motion.span whileHover={{ rotate: -10 }} transition={{ duration: 0.15, ease: sharpEase }}>

@@ -132,7 +132,7 @@ export function Hero() {
             >
               <motion.a
                 className="neo-btn bg-primary px-4 py-3 flex items-center gap-2"
-                href="https://github.com/Shreyanshp0"
+                href="https://github.com/abhinavthakurr23"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Open GitHub profile"

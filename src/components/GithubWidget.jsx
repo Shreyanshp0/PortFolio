@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Github, RefreshCcw, Star } from 'lucide-react'
 import { cardLift, mechanicalButton, sectionReveal, staggerGrid, staggerItem } from '../lib/motion'
 
-const username = 'Shreyanshp0'
+const username = 'abhinavthakurr23'
 
 export function GithubWidget() {
   void motion
