@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowUpRight, Download, Github, Linkedin } from 'lucide-react'
 import { sharpEase } from '../lib/motion'
 
-import profileImage from '../../Reference image/Profile pic.png'
+import profileImage from '../../Reference image/Abhinav_ProfilePic.jpeg'
 
 const heroStats = [
   { label: 'Specialty', value: 'MERN Stack', accent: 'bg-blue', tilt: '-1deg' },
@@ -117,7 +117,7 @@ export function Hero() {
 
               <p className="mb-2 text-xs font-black uppercase tracking-[0.24em] text-theme-muted">Creative Developer Portfolio</p>
               <h1 className="text-4xl font-black leading-tight md:text-5xl lg:text-[3.15rem]">
-                Shreyansh Pandey
+                Abhinav Thakur
                 <span className="mt-1.5 block text-primary">Full Stack MERN Developer</span>
               </h1>
               <p className="mt-4 max-w-2xl text-base leading-6 text-theme-secondary md:text-lg">
@@ -147,7 +147,7 @@ export function Hero() {
               </motion.a>
               <motion.a
                 className="neo-btn bg-blue text-ink px-4 py-3 flex items-center gap-2"
-                href="https://linkedin.com/in/shreyansh-pandey-"
+                href="https://www.linkedin.com/in/abhinav-thakur-724182406?trk=contact-info"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Open LinkedIn profile"
@@ -223,7 +223,7 @@ export function Hero() {
                   >
                     <motion.img
                       src={profileImage}
-                      alt="Shreyansh Pandey profile"
+                      alt="Abhinav Thakur profile"
                       className="h-full w-full object-cover"
                       whileHover={prefersReducedMotion ? undefined : { scale: 1.04 }}
                       transition={{ duration: 0.3, ease: 'easeOut' }}

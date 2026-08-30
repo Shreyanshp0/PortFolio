@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { Download, FileText } from 'lucide-react'
 import { SectionHeader } from './SectionHeader'
 import { cardLift, mechanicalButton, sectionReveal, sharpEase } from '../lib/motion'
-import resumeLink from '../assets/Shreyansh_CV.pdf'
+import resumeLink from '../assets/Abhinav_CV.pdf'
 
 export function Resume() {
   void motion
@@ -31,7 +31,7 @@ export function Resume() {
               Here is a crisp, metrics-focused snapshot of my recent projects, impact numbers, and tech stack.
             </p>
             <div className="flex gap-4 flex-wrap">
-            <motion.a className="neo-btn bg-primary px-4 py-3 flex items-center gap-2" href={resumeLink} download="Shreyansh_CV.pdf" {...mechanicalButton}>
+            <motion.a className="neo-btn bg-primary px-4 py-3 flex items-center gap-2" href={resumeLink} download="AbhinavCV.pdf" {...mechanicalButton}>
                 <Download size={18} /> Download
               </motion.a>
                 <motion.a

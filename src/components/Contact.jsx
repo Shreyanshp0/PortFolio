@@ -126,7 +126,7 @@ export function Contact() {
               </motion.a>
               <motion.a
                 className="neo-btn bg-blue text-ink px-4 py-3 flex items-center gap-2"
-                href="https://linkedin.com/in/shreyansh-pandey-"
+                href="https://www.linkedin.com/in/abhinav-thakur-724182406?trk=contact-info"
                 {...mechanicalButton}
               >
                 <Linkedin size={18} /> LinkedIn
